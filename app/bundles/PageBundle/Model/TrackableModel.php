@@ -402,6 +402,10 @@ class TrackableModel extends AbstractCommonModel
         foreach ($links as $link) {
             $url = $link->getAttribute('href');
 
+			// HACK:
+			$this->doNotTrack[$url] = $url;
+			continue;
+
             // Check for a do not track
             if ($link->hasAttribute('mautic:disable-tracking')) {
                 $this->doNotTrack[$url] = $url;
