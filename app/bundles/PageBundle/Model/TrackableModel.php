@@ -484,6 +484,8 @@ class TrackableModel extends AbstractCommonModel
      */
     protected function prepareUrlForTracking($url)
     {
+    	return false;
+
         // Ensure it's clean
         $url = trim($url);
 
